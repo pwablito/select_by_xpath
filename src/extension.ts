@@ -10,12 +10,9 @@ function css_selector_to_js_selector(css_selector: string) {
 	return `document.querySelector("${css_selector}")`;
 }
 
-
 export function activate(context: vscode.ExtensionContext) {
-	
-	console.log('Activated select-by-xpath');
 
-	context.subscriptions.push(vscode.commands.registerCommand('select-by-xpath.convert_text', async () => {
+	context.subscriptions.push(vscode.commands.registerCommand('select-by-xpath.convert_xpath', async () => {
 		let xpath: string | undefined = await vscode.window.showInputBox({
 			ignoreFocusOut: true,
 			placeHolder: 'Example: /html/body/button',
@@ -33,7 +30,7 @@ export function activate(context: vscode.ExtensionContext) {
 		});
 	}));
 
-	context.subscriptions.push(vscode.commands.registerCommand('select-by-xpath.convert_clipboard', async () => {
+	context.subscriptions.push(vscode.commands.registerCommand('select-by-xpath.convert_clipboard_xpath', async () => {
 		let xpath: string = await vscode.env.clipboard.readText();
 		if (!xpath) {
 			vscode.window.showInformationMessage('Empty input XPath');
