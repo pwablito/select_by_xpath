@@ -4,6 +4,10 @@
     "description": "Convert XPaths to raw JavaScript selectors",
     "version": "0.0.1",
     "publisher": "pwablito",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/pwablito/select_by_xpath.git"
+    },
     "engines": {
         "vscode": "^1.57.0"
     },
