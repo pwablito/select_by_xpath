@@ -1,9 +1,18 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 import * as vscode from 'vscode';
 
 
 function xpath_to_css_selector(xpath: string) {
 	//TODO implement conversion/parsing
-	return xpath;
+	let split = xpath.trim().split('/').filter((value: string) => value !== '');
+	var new_xpath = "";
+	for (let i = 0; i < split.length; i++) {
+		new_xpath += split[i];
+		if (i !== split.length - 1) {
+			new_xpath += " > ";
+		}
+	}
+	return new_xpath.split('[').join(':nth-of-type(').split(']').join(')');
 }
 
 function css_selector_to_js_selector(css_selector: string) {
