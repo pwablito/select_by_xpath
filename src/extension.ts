@@ -3,7 +3,7 @@ import * as vscode from 'vscode';
 
 
 function xpath_to_css_selector(xpath: string) {
-	//TODO implement conversion/parsing
+	// TODO Implement parser to iterate through characters of the XPATH and interpret them into CSS selector elements
 	let split = xpath.trim().split('/').filter((value: string) => value !== '');
 	var new_xpath = "";
 	for (let i = 0; i < split.length; i++) {

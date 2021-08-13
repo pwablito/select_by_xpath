@@ -20,13 +20,16 @@
     ],
     "main": "./out/extension.js",
     "contributes": {
-        "commands": [{
-            "command": "select-by-xpath.convert_xpath",
-            "title": "Convert XPath"
-        }, {
-            "command": "select-by-xpath.convert_clipboard_xpath",
-            "title": "Convert Clipboard XPath"
-        }]
+        "commands": [
+            {
+                "command": "select-by-xpath.convert_xpath",
+                "title": "Convert XPath"
+            },
+            {
+                "command": "select-by-xpath.convert_clipboard_xpath",
+                "title": "Convert Clipboard XPath"
+            }
+        ]
     },
     "scripts": {
         "vscode:prepublish": "npm run compile",
